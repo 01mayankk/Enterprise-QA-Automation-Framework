@@ -1,0 +1,9 @@
+{
+  "name": "enterprise-qa-automation-framework-root",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Root configuration for Enterprise QA Automation Framework",
+  "scripts": {
+    "build": "cd frontend && npm run build"
+  }
+}
