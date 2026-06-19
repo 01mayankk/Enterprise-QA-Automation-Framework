@@ -1,0 +1,6 @@
+username,password,expected_result
+tester_antigravity@test.com,Pass123!,success
+tester_antigravity@test.com,WrongPass!,fail_credentials
+invalid_user_format,Pass123!,fail_email
+,Pass123!,fail_empty_username
+tester_antigravity@test.com,,fail_empty_password
