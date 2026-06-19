@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  qa-tests:
+    build: .
+    container_name: qa_automation_runner
+    volumes:
+      # Map output folders to access HTML reports, screenshots, and logs on the host machine
+      - ./reports:/usr/src/app/reports
+      - ./screenshots:/usr/src/app/screenshots
+      - ./logs:/usr/src/app/logs
+    environment:
+      - TEST_ENV=qa
