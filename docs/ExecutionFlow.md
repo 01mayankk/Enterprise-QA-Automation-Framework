@@ -19,29 +19,29 @@ sequenceDiagram
     participant AUT as Demo Web Shop (AUT)
     participant Storage as GitHub Artifacts
 
-    User->>Dash: Input credentials & Choose parameters
+    User->>Dash: Input credentials and Choose parameters
     User->>Dash: Click "Trigger Dispatch Run"
-    Dash->>GHAPI: POST /actions/workflows/main.yml/dispatches (PAT)
+    Dash->>GHAPI: POST /actions/workflows/main.yml/dispatches with PAT
     GHAPI-->>Dash: 204 Dispatched
     
     GHAPI->>Runner: Start runner environment
-    Runner->>Pytest: Run pytest tests/ (via Makefile/CLI)
+    Runner->>Pytest: Run pytest tests/ via Makefile or CLI
     Pytest->>AUT: Execute Selenium web tests (headless)
-    AUT-->>Pytest: Return test results & captures
-    Pytest->>Runner: Write report.html & execution_summary.md
-    Runner->>Storage: Upload artifacts (execution-report, failure-screenshots)
+    AUT-->>Pytest: Return test results and captures
+    Pytest->>Runner: Write report.html and execution_summary.md
+    Runner->>Storage: Upload artifacts
     
-    Note over Dash, GHAPI: Run status polling & display
+    Note over Dash, GHAPI: Run status polling and display
     Dash->>GHAPI: GET /actions/runs
-    GHAPI-->>Dash: Returns latest run status & conclusions
-    Note over Dash: Display status & cache metrics (localStorage)
+    GHAPI-->>Dash: Returns latest run status and conclusions
+    Note over Dash: Display status and cache metrics in local storage
 
     Dash->>GHAPI: GET /actions/artifacts/zip (Download ZIP)
     GHAPI-->>Dash: Returns ZIP archive Blob
-    alt Size <= 20MB
-        Dash->>Dash: JSZip extracts report.html & images
-        Dash->>User: Display report HTML & Screenshot gallery
-    else Size > 20MB
+    alt Size is 20MB or less
+        Dash->>Dash: JSZip extracts report.html and images
+        Dash->>User: Display report HTML and Screenshot gallery
+    else Size is greater than 20MB
         Dash->>User: Show manual download option
     end
 ```

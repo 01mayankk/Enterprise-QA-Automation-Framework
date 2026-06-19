@@ -133,6 +133,6 @@ graph LR
     Dashboard -->|3. Dispatch API call| GHAPI
     GHAPI -->|4. Trigger Run| Runner
     Runner -->|5. Upload outputs| Artifacts
-    Dashboard -->|6. Download & Extract| Artifacts
+    Dashboard -->|6. Download and Extract| Artifacts
 ```
 
