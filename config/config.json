@@ -1,0 +1,34 @@
+{
+  "default_environment": "qa",
+  "environments": {
+    "development": {
+      "base_url": "https://demowebshop.tricentis.com/"
+    },
+    "qa": {
+      "base_url": "https://demowebshop.tricentis.com/"
+    },
+    "production": {
+      "base_url": "https://demowebshop.tricentis.com/"
+    }
+  },
+  "default_browser": "chrome",
+  "headless": true,
+  "implicit_wait_seconds": 10,
+  "explicit_wait_seconds": 15,
+  "retry_count": 2,
+  "paths": {
+    "reports_dir": "reports",
+    "screenshots_dir": "screenshots",
+    "logs_dir": "logs",
+    "log_file": "logs/automation.log"
+  },
+  "email_config": {
+    "enabled": false,
+    "smtp_server": "smtp.gmail.com",
+    "smtp_port": 587,
+    "sender_email": "testautomation@example.com",
+    "sender_password": "",
+    "receiver_email": "qa-team@example.com",
+    "send_on_failure_only": true
+  }
+}
