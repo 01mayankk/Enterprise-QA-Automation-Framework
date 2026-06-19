@@ -29,15 +29,15 @@ To keep compilation fast and deployment lightweight, the system uses a **Single 
 
 ```mermaid
 graph TD
-    App[App.tsx Dashboard Container]
-    App --> Header[Global Header & Settings Panel]
+    App["App.tsx Dashboard Container"]
+    App --> Header["Global Header & Settings Panel"]
     App --> TabManager{Active Tab State}
     
-    TabManager -->|'dashboard'| Overview[Overview Panel: Metrics Cache, Tech Stack, & PAT Integrations]
-    TabManager -->|'execution'| RunTests[Run Tests: Parameter selection form & GHA trigger]
-    TabManager -->|'reports'| ReportsView[Reports View: Run historical lists & ZIP HTML reader]
-    TabManager -->|'screenshots'| FailureGrabs[Failure Grabs: Image array gallery with zip extraction]
-    TabManager -->|'docs'| DocsView[Documentation View: Markdown file fetcher & reader]
+    TabManager -->|'dashboard'| Overview["Overview Panel: Metrics Cache, Tech Stack, & PAT Integrations"]
+    TabManager -->|'execution'| RunTests["Run Tests: Parameter selection form & GHA trigger"]
+    TabManager -->|'reports'| ReportsView["Reports View: Run historical lists & ZIP HTML reader"]
+    TabManager -->|'screenshots'| FailureGrabs["Failure Grabs: Image array gallery with zip extraction"]
+    TabManager -->|'docs'| DocsView["Documentation View: Markdown file fetcher & reader"]
 ```
 
 ---
@@ -77,11 +77,11 @@ sequenceDiagram
     API-->>UI: 204 No Content (Dispatched)
     
     API->>Run: Launch Selenium headless containers
-    Run->>Storage: Upload execution-report.zip & failure-screenshots.zip
+    Run->>Storage: Upload execution-report.zip and failure-screenshots.zip
     
     UI->>API: GET /actions/artifacts/zip (Download ZIP)
     API-->>UI: Download archive blob
-    Note over UI: If blob <= 20MB, JSZip unzips in browser. If > 20MB, offers secure download.
+    Note over UI: If blob is 20MB or less, JSZip unzips in browser. If greater than 20MB, offers secure download.
 ```
 
 ---

@@ -39,8 +39,8 @@ graph TD
     Dashboard -->|"1. Workflow Dispatch (Inputs)"| GHAPI
     GHAPI -->|2. Triggers Execution| GHActions
     GHActions -->|3. Runs Python tests| Runner
-    Runner -->|4. Generates & Uploads| Artifacts
-    Dashboard -->|5. Fetches Run List & Status| GHAPI
+    Runner -->|"4. Generates & Uploads"| Artifacts
+    Dashboard -->|"5. Fetches Run List & Status"| GHAPI
     Dashboard -->|"6. Downloads & Extracts <= 20MB"| Artifacts
 ```
 
