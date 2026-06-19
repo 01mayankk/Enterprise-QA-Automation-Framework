@@ -213,3 +213,20 @@ Files Removed:
 
 Lessons Learned:
 Career prep assets and resumes must be decoupled from engineering source code. Organizing a step-by-step Git history progression makes repositories recruiter-ready and showcases developer engineering processes.
+
+### Task 9
+
+Date:
+2026-06-19 20:25
+
+Task:
+GitHub Actions Artifact Upgrade
+
+Description:
+Migrated deprecated artifact actions from v3 to v4.
+
+Files Modified:
+- `.github/workflows/main.yml`
+
+Lessons Learned:
+GitHub periodically deprecates actions and workflows should be reviewed regularly.

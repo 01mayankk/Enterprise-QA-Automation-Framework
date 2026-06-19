@@ -45,10 +45,10 @@ jobs:
 
     steps:
       - name: Checkout Repository Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Python 3.10
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: "3.10"
           cache: "pip"
@@ -78,17 +78,17 @@ jobs:
           fi
           
           # Run tests with dynamic environment inputs
-          pytest -v --browser "$BROWSER_VAL" $HEADLESS_FLAG --html=reports/report.html --self-contained-html
+          python -m pytest -v --browser "$BROWSER_VAL" $HEADLESS_FLAG --html=reports/report.html --self-contained-html
 
       - name: Upload Test HTML Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: execution-report
           path: reports/
 
       - name: Upload Failure Screenshots
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: failure-screenshots

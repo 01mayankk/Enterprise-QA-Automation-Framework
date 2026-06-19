@@ -75,3 +75,15 @@
 ## 8. Recommendations
 
 - The framework is production-grade, ATS-ready, and fully prepared for portfolio showcases and technical interviews.
+
+---
+
+## 9. Revision History
+
+### GitHub Actions Artifact Upgrade
+
+**Date:** 2026-06-19  
+**Task:** GitHub Actions Artifact Upgrade  
+**Description:** Migrated deprecated artifact actions from v3 to v4.  
+**Files Modified:** `.github/workflows/main.yml`  
+**Lessons Learned:** GitHub periodically deprecates actions and workflows should be reviewed regularly.
