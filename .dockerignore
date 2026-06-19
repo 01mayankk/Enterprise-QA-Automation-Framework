@@ -1,0 +1,19 @@
+# Exclude local build cache and virtual environments
+__pycache__/
+.pytest_cache/
+.git/
+venv/
+env/
+
+# Exclude local generated outputs
+logs/
+reports/
+screenshots/
+Dockerfile
+docker-compose.yml
+.github/
+.gitignore
+.dockerignore
+pyproject.toml
+.flake8
+Makefile

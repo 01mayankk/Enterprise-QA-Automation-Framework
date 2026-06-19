@@ -1,0 +1,58 @@
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+
+# Python Cache & Compiled Code
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Pytest and Test Runner Cache
+.pytest_cache/
+.tox/
+.coverage
+.cache
+htmlcov/
+coverage/
+nosetests.xml
+coverage.xml
+*.cover
+
+# Generated Execution Artifacts (Exclude directories, keep READMEs)
+reports/*
+!reports/README.md
+screenshots/*
+!screenshots/README.md
+logs/*
+!logs/README.md
+
+# Private Prep Materials
+private/
+
+# Frontend builds
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Environment Configuration & Secrets
+.env
+.env.local
+.env.*
+
+# Temporary / Scratch Files
+*.tmp
+*.temp
+*.log
+*.bak
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# IDE Configurations (exposing project settings.json)
+.idea/
+.project
+.pydevproject
